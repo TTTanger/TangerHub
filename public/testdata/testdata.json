@@ -1,0 +1,65 @@
+[
+{
+    "id": 1,
+    "title": "Post 1",
+    "content": "This is the content of post 1.",
+    "author": {
+        "id": 1,
+        "name": "Author 1",
+        "avatar": "https://img.shetu66.com/2023/04/25/1682391068745168.png"
+    },
+    "imgs": [
+        "https://img.shetu66.com/2023/04/25/1682408628498684.png",
+        "https://img.shetu66.com/2023/04/25/1682408628498684.png"
+    ],
+    "comments": [
+        {
+            "id": 5,
+            "author": {
+                "id": 1,
+                "name": "User1",
+                "avatar": "https://img.shetu66.com/2023/04/25/1682408628498684.png"
+            },
+            "content": "This is the first comment.",
+            "date": "2022-01-01"
+        }
+    ],
+    "files":[]
+},
+{
+    "id": 2,
+    "author": {
+        "id": 2,
+        "name": "Author 2",
+        "avatar": "https://img.shetu66.com/2023/04/25/1682391068745168.png"
+    },
+    "title": "Post 2",
+    "content": "This is the content of post 2.",
+    "imgs": [
+        "https://img.shetu66.com/2023/04/25/1682408628498684.png"
+    ],
+    "comments": [
+        {
+            "id": 1,
+            "author":{
+                "id": 1,
+                "name": "User1",
+                "avatar": "https://img.shetu66.com/2023/04/25/1682408628498684.png"
+            },
+            "content": "Great post!",
+            "date": "2022-01-02"
+        },
+        {
+            "id": 2,
+            "author": {
+                "id": 2,
+                "name": "User2",
+                "avatar": "https://img.shetu66.com/2023/04/25/1682408628498684.png"
+            },
+            "content": "Thanks for sharing!",
+            "date": "2022-01-03"
+        }
+    ],
+    "files":[]
+}
+]
