@@ -21,7 +21,7 @@
 						rows="6"></textarea>
 				</div>
 			</div>
-			<button class="submit-button" @click="submitPost">Submit Post</button>
+			<button type="submit" class="submit-button" >Submit Post</button>
 		</form>
 	</div>
 </template>
@@ -74,9 +74,9 @@ export default {
 			} catch (error) {
 				console.error('Failed to submit post:', error);
 			}*/
-				
+
 				console.log('Post submitted:', mockResponse.data);
-				} 
+				}
 				catch (error) {
 				console.error('Failed to submit post:', error);
 				}
@@ -129,7 +129,7 @@ textarea {
 	border-radius: 6px;
 	font-size: 1rem;
 	transition: border-color 0.3s ease;
-	
+
 }
 
 input[type="text"]:focus,

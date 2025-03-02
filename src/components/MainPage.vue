@@ -1,11 +1,11 @@
 <template>
   <div class="main-page">
     <div class="header">
-      <User v-if="user" ref="user" class="user" 
-        :id="user.id" 
-        :name="user.name" 
+      <User v-if="user" ref="user" class="user"
+        :id="user.id"
+        :name="user.name"
         :email="user.email"
-        :password="user.password" 
+        :password="user.password"
         :avatar="user.avatar">
       </User>
       <div v-else class="loading">Loading user...</div>
@@ -15,7 +15,7 @@
     <h1>Posts</h1>
     <div v-if="user">
       <ColorfulButton
-        class="create-post-button" 
+        class="create-post-button"
         @click="togglePostCreate"
         :text="buttonText">
       </ColorfulButton>
@@ -24,7 +24,7 @@
     <div v-if="startCreatePost" class="create-post">
       <CreatePost :user="user"/>
     </div>
-      
+
     <div class="posts-container">
       <div v-if="postError" class="error">{{ error }}</div>
       <div v-else-if="loadingPost" class="loading">Loading posts...</div>
@@ -156,11 +156,11 @@ export default {
 }
 
 .posts-container {
-  max-width: 1000px; 
+  max-width: 1000px;
   min-width: auto;
-  margin: 0 10rem; 
-  padding: 1rem 2rem; 
-  box-sizing: border-box; 
+  margin: 0 auto;
+  padding: 1rem 2rem;
+  box-sizing: border-box;
 }
 
 .error {
