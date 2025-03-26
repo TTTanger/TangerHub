@@ -7,7 +7,7 @@
 
 <script>
 export default {
-  name: 'User',
+  name: 'User-component',
   props: {
     id: {
       type: String,

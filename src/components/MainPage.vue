@@ -6,7 +6,9 @@
         :name="user.name"
         :email="user.email"
         :password="user.password"
-        :avatar="user.avatar">
+        :avatar="user.avatar"
+        @click="goToUserProfile"
+        style="cursor: pointer">
       </User>
       <div v-else class="loading">Loading user...</div>
       <NavBar class="nav-bar" />
@@ -106,6 +108,10 @@ export default {
       this.startCreatePost = !this.startCreatePost;
       this.buttonText = this.startCreatePost ? 'Cancel' : 'Create Post';
     },
+
+    goToUserProfile() {
+      this.$router.push({ name: 'UserProfile', params: { id: this.user.id } });
+    },
   },
 
   mounted() {
@@ -134,6 +140,11 @@ export default {
   position: relative;
   padding: 0.5rem 1rem;
   display: flex;
+  transition: opacity 0.2s;
+}
+
+.user:hover {
+  opacity: 0.8;
 }
 
 .nav-bar {

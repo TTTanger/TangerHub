@@ -7,8 +7,9 @@ import VueLazyload from 'vue-lazyload'
 import MainPage from './components/MainPage.vue'
 import Post from './components/Post.vue'
 import Comment from './components/Comment.vue'
-import CreatePost from './components/CreatePost.vue' 
+import CreatePost from './components/CreatePost.vue'
 import User from './components/User.vue'
+import UserProfile from './components/UserProfile.vue'
 
 import App from './App.vue'
 
@@ -37,6 +38,11 @@ const routes = [
       path:'/user',
       name:'User',
       component:User
+    },
+    {
+      path: '/userproile',
+      name: 'UserProfile',
+      component: UserProfile
     }
   ]
 

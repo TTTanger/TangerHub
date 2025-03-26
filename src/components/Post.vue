@@ -11,22 +11,17 @@
     </div>
 
     <div class="post-content">
-      <h2 class="post-title">{{ title }}</h2>
+    <h2 class="post-title">{{ title }}</h2>
       <transition name="fade">
-        <p :class="{ 'post-text': true, 'clamped': !expanded }">{{ content }}</p>
+        <p v-if="content" :class="{ 'post-text': true, 'clamped': !expanded }">{{ content }}</p>
       </transition>
-      <div class="expand-button-container">
-        <button class="expand-button" @click="toggleExpand">{{ expanded ? '收起' : '展开' }}</button>
-      </div>
     </div>
 
-    <transition name="slide">
-      <div class="pics-container" v-if="expanded">
-        <div class="pics-grid">
-          <img v-for="(img, index) in imgs.slice(0, 9)" :key="index" v-lazy="img" alt="Img" />
-        </div>
+    <div class="pics-container">
+      <div class="pics-grid">
+        <img v-for="(img, index) in imgs.slice(0, 9)" :key="index" v-lazy="img" alt="Img" />
       </div>
-    </transition>
+    </div>
 
     <transition name="slide">
       <div class="files-container" v-if="files && files.length > 0">
@@ -39,6 +34,12 @@
         </div>
       </div>
     </transition>
+
+    <button class="comment-button">Comment</button>
+
+    <div class="expand-button-container">
+      <button class="expand-button" @click="toggleExpand">{{ expanded ? '收起' : '展开' }}</button>
+    </div>
 
     <transition name="slide">
       <div class="comments-container" v-if="expanded">
@@ -58,7 +59,7 @@ import Comment from './Comment.vue';
 import User from './User.vue';
 
 export default {
-  name: 'Post',
+  name: 'Post-component',
   components: {
     User,
     Comment,
@@ -83,7 +84,6 @@ export default {
     comments: {
       type: Object,
       required: true,
-      default: () => [],
     },
     imgs: {
       type: Array,

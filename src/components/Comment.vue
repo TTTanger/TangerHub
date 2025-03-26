@@ -14,7 +14,7 @@
 
 <script>
 export default {
-  name: "Comment",
+  name: "Comment-component",
   props: {
     author: {
       type: Object,
