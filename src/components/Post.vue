@@ -35,11 +35,14 @@
       </div>
     </transition>
 
-    <button class="comment-button">Comment</button>
+    <button class="reply-button" @click="startReply">Reply</button>
 
     <div class="expand-button-container">
       <button class="expand-button" @click="toggleExpand">{{ expanded ? '收起' : '展开' }}</button>
     </div>
+    <transition name="slide">
+      <Reply v-if="startReply" :author="author"/>
+    </transition>
 
     <transition name="slide">
       <div class="comments-container" v-if="expanded">
@@ -56,12 +59,12 @@
 
 <script>
 import Comment from './Comment.vue';
-import User from './User.vue';
+import Reply from './Reply.vue';
 
 export default {
   name: 'Post-component',
   components: {
-    User,
+    Reply,
     Comment,
   },
   props: {

@@ -3,7 +3,7 @@
 		<form @submit.prevent="submitPost">
 			<div class="form-group">
 				<label for="title">Title:</label>
-				<input type="text" id="title" name="title" v-model="title" placeholder="Enter post title">
+				<input type="text" id="title" name="title" v-model="title" placeholder="Enter post title" required>
 			</div>
 			<div class="form-group">
 				<label for="content">Content:</label>
@@ -27,19 +27,12 @@
 </template>
 
 <script>
-import BackButton from './BackButton.vue'
-import User from './User.vue'
 
 import axios from 'axios'
 import { v4 as uuidv4 } from 'uuid'
 
 export default {
 	name: 'CreatePost',
-	components: {
-		BackButton,
-		User,
-	},
-
 	props: {
 		user: {
 			type: Object,
